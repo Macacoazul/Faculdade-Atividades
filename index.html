@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Início / X</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+
+  <nav class="menu" aria-label="Principal">
+    <a href="#" class="x-logo" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="#" class="ativo"><i>🏠</i><span>Início</span></a>
+    <a href="#"><i>🔍</i><span>Explorar</span></a>
+    <a href="#"><i>🔔<em>6</em></i><span>Notificações</span></a>
+    <a href="#"><i>➕</i><span>Seguir</span></a>
+    <a href="#"><i>💬</i><span>Chat</span></a>
+    <a href="#"><i>🔖</i><span>Histórico</span></a>
+    <a href="#"><i>🚀</i><span>Estúdio de criadores</span></a>
+    <a href="#"><i>✅</i><span>Premium</span></a>
+    <a href="#"><i>👤</i><span>Perfil</span></a>
+    <a href="#"><i>⋯</i><span>Mais</span></a>
+    <button class="btn-branco" onclick="document.getElementById('texto').focus()">Postar</button>
+    <div class="conta">
+      <div class="avatar">M</div>
+      <div><b>Matheus</b><small>@matheus</small></div>
+      <span>⋯</span>
+    </div>
+  </nav>
+
+  <main class="feed">
+    <header class="abas" id="abas">
+      <button class="ativa">Para você</button><button>Seguindo</button><button>NFL</button><button>Esportes</button><button>Notícias</button><button>Tecnologia</button><button>+</button>
+    </header>
+
+    <section class="compor">
+      <div class="avatar">M</div>
+      <div class="compor-corpo">
+        <textarea id="texto" rows="1" maxlength="280" placeholder="O que está acontecendo?"></textarea>
+        <div class="compor-rodape">
+          <div class="icones"><i>🖼️</i><i>GIF</i><i>📊</i><i>😊</i><i>📅</i><i>📍</i></div>
+          <span id="contador">280</span>
+          <button class="btn" id="postar" disabled>Postar</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="destaque">
+      <h2>Personalize sua visualização 🎨</h2>
+      <p>Às vezes você precisa renovar o visual, como trocar as cores, aumentar o tamanho do texto ou rever sua escolha de modo escuro, e tudo isso pode ser feito nas configurações.</p>
+      <button class="btn-branco pequeno" id="tema">Alterar visualização</button>
+    </section>
+
+    <section id="lista"></section>
+  </main>
+
+  <aside class="lateral">
+    <input type="search" placeholder="Buscar" id="busca">
+    <div class="caixa">
+      <h2>Assine o Premium</h2>
+      <p>Livre-se dos anúncios, veja suas análises, impulsione suas respostas e desbloqueie mais de 20 recursos.</p>
+      <button class="btn">Assinar</button>
+    </div>
+    <div class="caixa">
+      <button class="fechar" aria-label="Fechar">✕</button>
+      <h2>Notícias de hoje</h2>
+      <div class="noticia"><b>Jogadores de Valorant compartilham clipes e conquistas de partidas</b><small>Em alta agora · Outros · 170 posts</small></div>
+      <div class="noticia"><b>Cyberpunk 2077 roda bem no iPhone 17 Pro</b><small>Há 6 horas · Entretenimento · 1.196 posts</small></div>
+      <div class="noticia"><b>Torradeira em forma de caça lança o pão pelos pós-combustores</b><small>Há 16 horas · Outros · 8.080 posts</small></div>
+    </div>
+    <div class="caixa">
+      <button class="fechar" aria-label="Fechar">✕</button>
+      <h2>NFL</h2>
+      <div class="jogo"><div><b>Falcons</b> <small>0-2</small><br><b>Packers</b> <small>1-1</small></div><div class="hora"><b>Amanhã</b><small>21:15</small></div></div>
+      <div class="jogo"><div><b>Jets</b> <small>1-1</small><br><b>Lions</b> <small>1-1</small></div><div class="hora"><b>Domingo</b><small>14:00</small></div></div>
+    </div>
+  </aside>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
