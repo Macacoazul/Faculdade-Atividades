@@ -1,0 +1,53 @@
+diff --git a/ui/monitor.py b/ui/monitor.py
+index 7e97cff..72825ad 100755
+--- a/ui/monitor.py
++++ b/ui/monitor.py
+@@ -47,6 +47,13 @@ COLOR_OFFLINE="949494"
+ COLOR_UPDATING="bfba34"
+ COLOR_DISABLE="c21b1a"
+ 
++# ===================== TEMA INSTITUCIONAL (cosmetico) =====================
++# Edite apenas os valores abaixo com as cores oficiais (hex, sem '#').
++# Nao altera consentimento/notificacao nem adiciona brasao: so aparencia.
++BRAND_PRIMARY    = "1f4e79"   # cor do cartao que exibe o nome do agente / faixas
++BRAND_ON_PRIMARY = "ffffff"   # cor do texto (nome + status) sobre o cartao
++# ==========================================================================
++
+ TIMEOUT_REQ=5
+ 
+ def is_windows():
+@@ -668,8 +675,8 @@ class Main():
+             self._reload_activities=False
+             self.update_systray(self.icofile, self.msgst)
+             if self._mode!="runonfly":
+-                self._img_status_top.set_background_gradient(bground,"ffffff",gdi.GRADIENT_DIRECTION_TOPBOTTOM)
+-                self._img_status_bottom.set_background_gradient(bground,"ffffff",gdi.GRADIENT_DIRECTION_BOTTONTOP)
++                self._img_status_top.set_background_gradient(bground,BRAND_PRIMARY,gdi.GRADIENT_DIRECTION_TOPBOTTOM)
++                self._img_status_bottom.set_background_gradient(bground,BRAND_PRIMARY,gdi.GRADIENT_DIRECTION_BOTTONTOP)
+             apptx=[]
+             bexline=False
+             if "name" in appar and appar["name"]!="":
+@@ -1097,11 +1104,12 @@ class Main():
+         self._img_status_top = gdi.Panel()
+         self._img_status_top.set_position(gapx, 0)
+         self._img_status_top.set_size(_CONTENT_WIDTH, _HEIGHT_STATUS_BAR)
+-        self._img_status_top.set_background_gradient("ffffff", "ffffff", gdi.GRADIENT_DIRECTION_TOPBOTTOM)
++        self._img_status_top.set_background_gradient(BRAND_PRIMARY, BRAND_PRIMARY, gdi.GRADIENT_DIRECTION_TOPBOTTOM)
+         self._app.add_component(self._img_status_top)        
+         
+         self._lbl_status = gdi.Label()
+-        self._lbl_status.set_background("ffffff")
++        self._lbl_status.set_background(BRAND_PRIMARY)
++        self._lbl_status.set_foreground(BRAND_ON_PRIMARY)
+         self._lbl_status.set_opaque(True)
+         self._lbl_status.set_text_align(gdi.TEXT_ALIGN_CENTERMIDDLE)
+         self._lbl_status.set_text(self._get_message('waiting'))
+@@ -1112,7 +1120,7 @@ class Main():
+         self._img_status_bottom = gdi.Panel()
+         self._img_status_bottom.set_position(gapx, self._lbl_status.get_y() + self._lbl_status.get_height())
+         self._img_status_bottom.set_size(_CONTENT_WIDTH,_HEIGHT_STATUS_BAR)
+-        self._img_status_bottom.set_background_gradient("ffffff", "ffffff", gdi.GRADIENT_DIRECTION_BOTTONTOP)
++        self._img_status_bottom.set_background_gradient(BRAND_PRIMARY, BRAND_PRIMARY, gdi.GRADIENT_DIRECTION_BOTTONTOP)
+         self._app.add_component(self._img_status_bottom)
+         
+         self._lbl_notificationst = gdi.Label()
